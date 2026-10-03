@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Something Special ✨</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+    background:#050510;
+    color:white;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body{
+    background:
+        radial-gradient(circle at 20% 20%, #44206b 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #182d68 0%, transparent 30%),
+        #050510;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.2;
+        transform:scale(.5);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.5);
+    }
+
+}
+
+
+/* =========================
+   SCREENS
+========================= */
+
+.screen{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.hidden{
+
+    opacity:0;
+    pointer-events:none;
+    transform:scale(1.1);
+
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+#loading{
+
+    flex-direction:column;
+
+}
+
+.loader{
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    border:3px solid rgba(255,255,255,.1);
+
+    border-top:3px solid #ff6fa5;
+
+    animation:spin 1s linear infinite;
+
+    margin-bottom:30px;
+
+}
+
+@keyframes spin{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+.loadingText{
+
+    color:#aaa;
+    letter-spacing:3px;
+    font-size:12px;
+
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+
+    text-align:center;
+    max-width:700px;
+    padding:30px;
+
+}
+
+.small{
+
+    letter-spacing:7px;
+    font-size:12px;
+    color:#aaa;
+    margin-bottom:30px;
+
+}
+
+.intro h1{
+
+    font-size:clamp(45px,10vw,100px);
+
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff7ca8,
+            #fff
+        );
+
+    background-size:200%;
+
+    -webkit-background-clip:text;
+    color:transparent;
+
+    animation:shine 4s linear infinite;
+
+}
+
+@keyframes shine{
+
+    to{
+        background-position:200%;
+    }
+
+}
+
+.intro p{
+
+    margin-top:25px;
+
+    color:#aaa;
+
+    font-size:17px;
+
+}
+
+
+.enter{
+
+    margin-top:45px;
+
+    padding:15px 45px;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    letter-spacing:3px;
+
+    transition:.4s;
+
+}
+
+.enter:hover{
+
+    background:white;
+
+    color:#111;
+
+    transform:scale(1.08);
+
+}
+
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+.birthday{
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.birthday .label{
+
+    font-size:13px;
+
+    letter-spacing:8px;
+
+    color:#aaa;
+
+}
+
+.birthday h1{
+
+    font-size:clamp(50px,12vw,140px);
+
+    line-height:.9;
+
+    margin:20px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #ff75a7,
+            #a66cff
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+.name{
+
+    font-size:clamp(25px,5vw,55px);
+
+    color:white;
+
+}
+
+.date{
+
+    margin-top:15px;
+
+    color:#aaa;
+
+    letter-spacing:5px;
+
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake{
+
+    font-size:90px;
+
+    margin-top:30px;
+
+    animation:
+
+        cakeFloat 2s ease-in-out infinite;
+
+}
+
+@keyframes cakeFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter{
+
+    width:min(90%,600px);
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.03)
+        );
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+
+        0 30px 100px
+        rgba(0,0,0,.5);
+
+}
+
+.letter h2{
+
+    font-size:35px;
+
+    margin-bottom:25px;
+
+}
+
+.letter p{
+
+    color:#ccc;
+
+    line-height:1.9;
+
+    margin-bottom:15px;
+
+}
+
+.next{
+
+    margin-top:20px;
+
+    padding:12px 30px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#ff5f91;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+
+    text-align:center;
+
+}
+
+.final h1{
+
+    font-size:clamp(40px,9vw,90px);
+
+}
+
+.final p{
+
+    margin-top:20px;
+
+    color:#aaa;
+
+    font-size:18px;
+
+}
+
+.final .big{
+
+    font-size:70px;
+
+    margin-top:30px;
+
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particle{
+
+    position:fixed;
+
+    top:-30px;
+
+    pointer-events:none;
+
+    animation:fall linear forwards;
+
+    z-index:20;
+
+}
+
+@keyframes fall{
+
+    to{
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================
+   SKIP
+========================= */
+
+.skip{
+
+    position:fixed;
+
+    bottom:20px;
+    right:20px;
+
+    color:#666;
+
+    font-size:11px;
+
+    cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- STARS -->
+
+<div class="stars" id="stars"></div>
+
+
+<!-- ======================
+     LOADING
+====================== -->
+
+<section id="loading" class="screen">
+
+    <div class="loader"></div>
+
+    <div class="loadingText">
+
+        PREPARING SOMETHING SPECIAL...
+
+    </div>
+
+</section>
+
+
+<!-- ======================
+     INTRO
+====================== -->
+
+<section id="intro" class="screen hidden">
+
+    <div class="intro">
+
+        <div class="small">
+
+            27 • 10 • 2026
+
+        </div>
+
+        <h1>
+
+            HEY, YOU.
+
+        </h1>
+
+        <p>
+
+            I made a little something<br>
+            just for today.
+
+        </p>
+
+        <button
+            class="enter"
+            onclick="showBirthday()">
+
+            ENTER ✦
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ======================
+     BIRTHDAY
+====================== -->
+
+<section id="birthday" class="screen hidden">
+
+    <div class="birthday">
+
+        <div class="label">
+
+            TODAY IS YOUR DAY
+
+        </div>
+
+        <h1>
+
+            HAPPY<br>
+            BIRTHDAY
+
+        </h1>
+
+        <div class="name">
+
+            [Abigail Cenyta Bella]
+
+        </div>
+
+        <div class="date">
+
+            27 OCTOBER 2026
+
+        </div>
+
+        <div class="cake">
+
+            🎂
+
+        </div>
+
+        <button
+            class="next"
+            onclick="showLetter()">
+
+            Ada sesuatu lagi → 
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ======================
+     LETTER
+====================== -->
+
+<section id="letterScreen" class="screen hidden">
+
+    <div class="letter">
+
+        <h2>
+
+            💌 A Little Message
+
+        </h2>
+
+        <p>
+
+            Selamat ulang tahun!
+
+        </p>
+
+        <p>
+
+            Semoga bertambahnya usia membawa
+            semakin banyak hal baik dalam hidupmu.
+
+        </p>
+
+        <p>
+
+            Semoga hari-harimu dipenuhi
+            kebahagiaan, kesehatan, orang-orang baik,
+            dan banyak alasan untuk tersenyum.
+
+        </p>
+
+        <p>
+
+            Dan semoga semua hal yang sedang
+            kamu perjuangkan bisa perlahan
+            menjadi kenyataan.
+
+        </p>
+
+        <button
+            class="next"
+            onclick="showFinal()">
+
+            One last thing →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ======================
+     FINAL
+====================== -->
+
+<section id="final" class="screen hidden">
+
+    <div class="final">
+
+        <div class="big">
+
+            ✨
+
+        </div>
+
+        <h1>
+
+            HAVE A<br>
+            WONDERFUL DAY.
+
+        </h1>
+
+        <p>
+
+            Happy Birthday, [Abigail Cenyta Bella]. 🎂
+
+        </p>
+
+        <p>
+
+            Keep smiling. 🌙
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<div
+    class="skip"
+    onclick="showBirthday()">
+
+    skip intro
+
+</div>
+
+
+<script>
+
+
+/* =========================
+   STARS GENERATOR
+========================= */
+
+const stars =
+document.getElementById("stars");
+
+
+for(let i=0;i<150;i++){
+
+    const star =
+    document.createElement("div");
+
+    star.className="star";
+
+    star.style.left =
+    Math.random()*100+"%";
+
+    star.style.top =
+    Math.random()*100+"%";
+
+    star.style.animationDelay =
+    Math.random()*3+"s";
+
+    stars.appendChild(star);
+
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+setTimeout(()=>{
+
+    document
+    .getElementById("loading")
+    .classList.add("hidden");
+
+    document
+    .getElementById("intro")
+    .classList.remove("hidden");
+
+},2500);
+
+
+/* =========================
+   SCREEN SYSTEM
+========================= */
+
+function changeScreen(
+    current,
+    next
+){
+
+    document
+    .getElementById(current)
+    .classList.add("hidden");
+
+    setTimeout(()=>{
+
+        document
+        .getElementById(next)
+        .classList.remove("hidden");
+
+    },500);
+
+}
+
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+function showBirthday(){
+
+    changeScreen(
+        "intro",
+        "birthday"
+    );
+
+    particles();
+
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+function showLetter(){
+
+    changeScreen(
+        "birthday",
+        "letterScreen"
+    );
+
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+function showFinal(){
+
+    changeScreen(
+        "letterScreen",
+        "final"
+    );
+
+    particles();
+
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+function particles(){
+
+    const emojis = [
+
+        "✨",
+        "🎉",
+        "💖",
+        "🎊",
+        "⭐",
+        "💕",
+        "🌸"
+
+    ];
+
+
+    for(
+        let i=0;
+        i<60;
+        i++
+    ){
+
+        const particle =
+        document.createElement("div");
+
+        particle.className =
+        "particle";
+
+        particle.innerText =
+        emojis[
+            Math.floor(
+                Math.random()
+                * emojis.length
+            )
+        ];
+
+
+        particle.style.left =
+        Math.random()*100+"vw";
+
+
+        particle.style.fontSize =
+        (12+Math.random()*25)+"px";
+
+
+        particle.style.animationDuration =
+        (2+Math.random()*4)+"s";
+
+
+        document.body
+        .appendChild(particle);
+
+
+        setTimeout(()=>{
+
+            particle.remove();
+
+        },6000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
